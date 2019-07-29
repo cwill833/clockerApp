@@ -26,17 +26,17 @@ class App extends Component{
     let latDif = Math.abs(this.state.myLat - this.state.weWorkLat).toFixed(4)
     let lngDif = Math.abs(this.state.myLng - this.state.weWorkLng).toFixed(3)
 
-    let clockInLat = !parseInt(latDif) ? "Clocked in": "Not clocked in"
-    let clockInLng = !parseInt(lngDif) ? "Clocked in": "Not clocked in"
-    
+    let clockInLat = !parseFloat(latDif) ? "Clocked in": "Not clocked in"
+    let clockInLng = !parseFloat(lngDif) ? "Clocked in": "Not clocked in"
+
     return(
       <div className="flex-r">
         <h1>Hello World!</h1>
         <h2>This is my location</h2>
         <h3>lat: {this.state.myLat}</h3>
         <h3>lng: {this.state.myLng}</h3>
-        <h4>This is the differece in Lat: {clockInLat}</h4>
-        <h4>This is the differece in Lat: {clockInLng}</h4>
+        <h4>Based on LAT we are: {clockInLat}</h4>
+        <h4>Based on LNG we are: {clockInLng}</h4>
       </div>
     )
   }
